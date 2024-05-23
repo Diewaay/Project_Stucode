@@ -1,7 +1,7 @@
-/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-// src/components/SubscriptionSection.jsx
+/* eslint-disable react/prop-types */
 import React from "react";
+import { Link } from "react-router-dom";
 
 const SubscriptionSection = ({ title, description, benefits, packages }) => {
   return (
@@ -27,7 +27,11 @@ const SubscriptionSection = ({ title, description, benefits, packages }) => {
               {pkg.discountedPrice}
             </p>
             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full">
-              Pilih Paket
+              <Link
+                to={`/Subscription?name=${pkg.name}&price=${pkg.discountedPrice}`}
+              >
+                Pilih Paket
+              </Link>
             </button>
           </div>
         ))}

@@ -38,10 +38,8 @@ const Navbar = () => {
   return (
     <>
       <div
-        className={`max-w-screen-2xl z-50 font-semibold container mx-auto md:px-20 px-4 dark:bg-slate-700 dark:text-white fixed top-0 left-0 right-0 backdrop-blur-sm bg-white/30${
-          sticky
-            ? " bg-white backdrop-filter dark:bg-slate-700 dark:text-white backdrop-blur"
-            : ""
+        className={`max-w-screen-2xl z-50 font-semibold container mx-auto md:px-20 px-4 bg-white fixed top-0 left-0 right-0${
+          sticky ? " bg-white backdrop-filter backdrop-blur" : ""
         } shadow-md duration-300 transition-all ease-in-out`}
       >
         <div className="navbar">
@@ -83,8 +81,13 @@ const Navbar = () => {
               </div>
             </div>
             <div>
-              <button className="text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 cursor-pointer">
-                <Link to="/Login">Login</Link>
+              <button className="text-black cursor-pointer">
+                <Link to="/Login">Masuk</Link>
+              </button>
+            </div>
+            <div>
+              <button className="text-black cursor-pointer">
+                <Link to="/Register">Daftar</Link>
               </button>
             </div>
           </div>

@@ -1,4 +1,8 @@
-import Education from "../../../public/education.jpg";
+import Education from "../../../public/Home.png";
+import Course_BasisData from "../../../public/Course_BasisData.png";
+import Course_Desain from "../../../public/Course_Desain.png";
+import Course_Pemograman from "../../../public/Course_Pemograman.png";
+import Course_Jaringan from "../../../public/Course_Jaringa.png";
 import Section from "../Sections/Section";
 import Paragraph from "../Sections/Paragraph";
 import Title from "../Sections/Title";
@@ -6,6 +10,7 @@ import Button from "../Sections/Button";
 import Card from "../Sections/Card";
 import Footer from "../Footer";
 import SubscriptionSection from "../Sections/SubscriptionSection";
+
 const Home = () => {
   const subscriptionBenefits = [
     "Harga Terjangkau",
@@ -32,10 +37,43 @@ const Home = () => {
       discountedPrice: "Rp. 50.000",
     },
   ];
+
+  const courses = [
+    {
+      title: "Design Grafis",
+      deskripsi: `Mempelajari desain grafis memiliki manfaat yang luas dalam era
+    digital saat ini. Kemampuan untuk memahami prinsip-prinsip desain,
+    komposisi visual, dan penggunaan perangkat lunak desain membantu
+    seseorang dalam menyampaikan pesan secara efektif melalui gambar
+    dan grafik. Selain itu, keterampilan desain grafis juga sangat
+    diperlukan dalam berbagai industri, mulai dari periklanan, media
+    sosial, hingga pengembangan produk, karena dapat meningkatkan daya
+    tarik visual dan membantu membangun merek yang kuat.`,
+      image: Course_Desain,
+    },
+    {
+      title: "Basis Data",
+      deskripsi:
+        "Mempelajari Basis Data memiliki manfaat yang bagus di dunia digital",
+      image: Course_BasisData,
+    },
+    {
+      title: "Pemrograman Dasar",
+      deskripsi: `Mempelajari Pemograman memiliki manfaat yang luas dalam era
+    digital saat ini.`,
+      image: Course_Pemograman,
+    },
+    {
+      title: "Jaringan Komputer",
+      deskripsi: `Mempelajari Jaringan Komputer memiliki manfaat yang luas dalam era
+    digital saat ini.`,
+      image: Course_Jaringan,
+    },
+  ];
   return (
     <>
       <div className="max-w-screen-2xl min-h-screen bg-blue-600 container mx-auto md:px-20 px-4 flex flex-col md:flex-row my-10">
-        <div className="w-full order-2 md:order-1 md:w-1/2 mt-12 md:mt-32">
+        <div className="w-full order-2 md:order-1 md:w-1/2 mt-12 md:mt-32 my-10">
           <div className="space-y-6">
             <Title text="KURSUS ONLINE STUCODE" />
             <Paragraph text="Kembangkan Kemampuan Anda Di Dunia Digital Bersama STUCODE" />
@@ -51,7 +89,7 @@ const Home = () => {
           Kenapa Harus kursus di STUCODE?
         </h2>
       </div>
-      <div className="max-w-screen-2xl container mx-auto md:px-20 px-4 flex flex-col items-center md:items-start md:flex-row my-10">
+      <div className="max-w-screen-2xl container mx-auto md:px-20 px-4 flex flex-col items-center md:items-start md:flex-row top-10">
         <Section
           title="Kategori kursus yang bervariasi"
           orderClass="order-2 md:order-1"
@@ -73,22 +111,15 @@ const Home = () => {
       </div>
       <div className="max-w-screen-2xl container mx-auto md:px-20 px-4 flex flex-col items-center md:items-start md:flex-row my-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mt-8">
-          <Card
-            image="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-            title="Course 1"
-          />
-          <Card
-            image="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-            title="Course 2"
-          />
-          <Card
-            image="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-            title="Course 3"
-          />
-          <Card
-            image="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-            title="Course 4"
-          />
+          {courses.map((course) => (
+            <Card
+              key={course.title}
+              title={course.title}
+              image={course.image}
+              deskripsi={course.deskripsi}
+              hideDescription={true}
+            />
+          ))}
         </div>
       </div>
       <div className="max-w-screen-2xl container mx-auto md:px-20 px-4 flex justify-center flex-col items-center md:items-start md:flex-row my-10">

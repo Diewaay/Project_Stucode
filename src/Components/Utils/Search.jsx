@@ -3,10 +3,10 @@ const Search = () => {
     <div>
       {" "}
       <div className="flex items-center w-full max-w-xl mx-auto">
-        <label className="flex items-center w-full px-3 py-2 border rounded-md">
+        <label className="flex items-center w-full px-3 py-2 border rounded-md bg-blue-100">
           <input
             type="text"
-            className="flex-grow outline-none bg-transparent text-black"
+            className="flex-grow outline-non bg-blue-100 text-black"
             placeholder="Search"
           />
           <svg
